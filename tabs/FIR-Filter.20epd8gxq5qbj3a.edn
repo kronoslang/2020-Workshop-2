@@ -1,0 +1,126 @@
+{:identifier "FIR-Filter"
+ :identity "20epd8gxq5qbj3a"
+ :patch
+{:cables
+{["22ugf82vjfhw87y" 0] [:fixed "nt0hz82ryardsn6" 0]
+ ["48m3siuyxewrrkx" 0] [:fixed "78g3tmdonh5ouj0" 0]
+ ["78g3tmdonh5ouj0" 0] [:fixed "ng03vhkb8cpq5f9" 0]
+ ["78g3tmdonh5ouj0" 1] [:fixed "bmek7g4orya8haa" 0]
+ ["78g3tmdonh5ouj0" 2] [:fixed "ibf26k7vgjar24o" 0]
+ ["8xl1q88s0mt9ch5" 0] [:fixed "ng03vhkb8cpq5f9" 2]
+ ["8xl1q88s0mt9ch5" 1] [:fixed "48m3siuyxewrrkx" 0]
+ ["bmek7g4orya8haa" 0] [:fixed "6c967l6lfe3k2f0" 0]
+ ["ng03vhkb8cpq5f9" 0] [:fixed "2iuatjqzfxy4iju" 0]
+ ["nt0hz82ryardsn6" 0] [:fixed "8xl1q88s0mt9ch5" 0]
+ ["nt0hz82ryardsn6" 1] [:fixed "tl23skgbse8hyd6" 0]
+ ["tl23skgbse8hyd6" 0] [:fixed "ng03vhkb8cpq5f9" 1]
+ ["tl23skgbse8hyd6" 1] [:fixed "78g3tmdonh5ouj0" 0]}
+ :nodes
+{"22ugf82vjfhw87y" 
+{:inputs ["sig"]
+ :label "o))"
+ :name "play here!"
+ :outputs ["thru"]
+ :parsed [:playback [:free-var "sig"]]
+ :pos [617 72]
+ }
+ "2iuatjqzfxy4iju" 
+{:inputs []
+ :label "(-1 -1) `xy` (1 1)"
+ :name "click & drag here!"
+ :outputs [""]
+ :parsed [:widget "3z9762" {:mouse [0 0.10276684689060432 0.9103535013395168 0]} {:type :xy-pad, :kind :touch, :size :normal, :left-bottom [:tuple [:float "-1"] [:float "-1"]], :right-top [:tuple [:float "1"] [:float "1"]]}]
+ :pos [-218 -52]
+ }
+ "48m3siuyxewrrkx" 
+{:color 2
+ :inputs ["sig~"]
+ :label "z-1($sig~)"
+ :name "unit delay"
+ :outputs [""]
+ :parsed [:fn "z-1" [:tuple [:free-var "sig~"]]]
+ :pos [313 -24]
+ }
+ "6c967l6lfe3k2f0" 
+{:color 3
+ :inputs []
+ :label "0.499d"
+ :outputs [""]
+ :parsed [:double "0.499"]
+ :pos [-250 -116]
+ }
+ "78g3tmdonh5ouj0" 
+{:color 3
+ :ephemeral-inputs #{"more1"}
+ :inputs ["a" "b" "more1" "more..."]
+ :label "*"
+ :name "input signal & gate"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" [:free-var "b"] [:free-var "more1"] [:free-var "more..."]]
+ :pos [132 -26]
+ }
+ "8xl1q88s0mt9ch5" 
+{:color 2
+ :inputs ["a" "b" "more..."]
+ :label "*"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" [:free-var "b"] [:free-var "more..."]]
+ :pos [389 161]
+ }
+ "9jsdb2nd3tdu9f5" 
+{:color 2
+ :inputs []
+ :label "; The filter consists of a delay element, gain stages and a summing mixer."
+ :outputs []
+ :parsed [:comment "The filter consists of a delay element, gain stages and a summing mixer."]
+ :pos [422 215]
+ }
+ "bmek7g4orya8haa" 
+{:color 3
+ :inputs ["seed"]
+ :label "Gen:Noise($seed)"
+ :outputs [""]
+ :parsed [:fn "Gen:Noise" [:tuple [:free-var "seed"]]]
+ :pos [-96 -122]
+ }
+ "dds4qige9pd5u7o" 
+{:inputs []
+ :label "; # Filter Explorer #\n\n\nThis patch lets you design first order FIR filters by dragging on a two-dimensional pad.\n\nThe X-coordinate sets the direct gain, and the Y-coordinate influences the gain of the path delated by one sample."
+ :outputs []
+ :parsed [:comment "# Filter Explorer #\n\n\nThis patch lets you design first order FIR filters by dragging on a two-dimensional pad.\n\nThe X-coordinate sets the direct gain, and the Y-coordinate influences the gain of the path delated by one sample."]
+ :pos [360 -292]
+ }
+ "ibf26k7vgjar24o" 
+{:color 3
+ :inputs []
+ :label "0.25"
+ :outputs [""]
+ :parsed [:float "0.25"]
+ :pos [-49 -181]
+ }
+ "ng03vhkb8cpq5f9" 
+{:inputs ["pair"]
+ :label "(gate x y) = First($pair)"
+ :outputs ["gate" "x" "y"]
+ :parsed [:fn "First" [:tuple [:free-var "pair"]]]
+ :pos [24 70]
+ }
+ "nt0hz82ryardsn6" 
+{:color 2
+ :ephemeral-inputs #{"numbers1" "numbers2"}
+ :inputs ["numbers1" "numbers2" "numbers..."]
+ :label "Sum($numbers...)"
+ :outputs [""]
+ :parsed [:fn "Sum" [:tuple [:free-var "numbers1"] [:free-var "numbers2"] [:free-var "numbers..."]]]
+ :pos [518 161]
+ }
+ "tl23skgbse8hyd6" 
+{:color 2
+ :inputs ["a" "b" "more..."]
+ :label "*"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" [:free-var "b"] [:free-var "more..."]]
+ :pos [277 81]
+ }}
+ :scale 1
+ :scroll [0 0]}}

@@ -1,0 +1,217 @@
+{:identifier "Waveshaping"
+ :identity "6vaj5pujecl9czp"
+ :patch
+{:cables
+{["0wqk1olkc5fh46g" 0] [:fixed "28tzo2e0b9jesro" 0]
+ ["0wqk1olkc5fh46g" 1] [:fixed "tefck7antn9zucz" 0]
+ ["28tzo2e0b9jesro" 0] [:fixed "ohbjsqcnlfe0dpu" 0]
+ ["28v7ktnmoaetkku" 0] [:fixed "b2e1fs6qz8r3zsm" 0]
+ ["5wr56q6tlg9qwe2" 0] [:fixed "3qao1m96qcu9gdi" 0]
+ ["5wr56q6tlg9qwe2" 1] [:fixed "28tzo2e0b9jesro" 0]
+ ["76py36drf2ot6vd" 0] [:fixed "28tzo2e0b9jesro" 0]
+ ["7t13ua9ntmz0hoy" 0] [:fixed "b2e1fs6qz8r3zsm" 0]
+ ["b2e1fs6qz8r3zsm" 0] [:fixed "cg6goedgzq0mnj6" 0]
+ ["cg6goedgzq0mnj6" 0] [:fixed "28tzo2e0b9jesro" 0]
+ ["cp61jk7q8cnrzfe" 0] [:fixed "76py36drf2ot6vd" 0]
+ ["dc9a6h9tpj9nbtq" 0] [:fixed "kl4iyvbmsj3ff4n" 0]
+ ["dc9a6h9tpj9nbtq" 1] [:fixed "kl4iyvbmsj3ff4n" 0]
+ ["kl4iyvbmsj3ff4n" 0] [:fixed "w7so3nxn71p5wrv" 0]
+ ["lkv3ia3hf7tu9cv" 0] [:fixed "p6vc1vlduuhsxhg" 0]
+ ["lkv3ia3hf7tu9cv" 1] [:fixed "b2e1fs6qz8r3zsm" 0]
+ ["mi075ox8lxw6wi3" 0] [:fixed "lkv3ia3hf7tu9cv" 0]
+ ["p6vc1vlduuhsxhg" 0] [:fixed "dc9a6h9tpj9nbtq" 0]
+ ["qxqg5te4bsxslr4" 0] [:fixed "rajfo2a576e379u" 0]
+ ["rajfo2a576e379u" 0] [:fixed "28v7ktnmoaetkku" 0]
+ ["tefck7antn9zucz" 0] [:fixed "5wr56q6tlg9qwe2" 0]
+ ["w7so3nxn71p5wrv" 0] [:fixed "cp61jk7q8cnrzfe" 0]
+ ["wvu3mp6ukchgcpi" 0] [:fixed "qxqg5te4bsxslr4" 0]
+ ["zjdojq8bgdg411d" 0] [:fixed "0wqk1olkc5fh46g" 0]}
+ :nodes
+{"0wqk1olkc5fh46g" 
+{:color 4
+ :flip-y true
+ :inputs ["a" "b" "more..."]
+ :label "-"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "-" [:free-var "b"] [:free-var "more..."]]
+ :pos [78 34]}
+ "28tzo2e0b9jesro" 
+{:inputs ["freq"]
+ :label "MyPhasor($freq)"
+ :name "one phasor to drive them all"
+ :outputs [""]
+ :parsed [:fn "MyPhasor" [:tuple [:free-var "freq"]]]
+ :pos [-301 -92]}
+ "28v7ktnmoaetkku" 
+{:cable-midpoints 
+{0 [-64 49]}
+ :color 3
+ :inputs ["a"]
+ :label "Abs($a)"
+ :outputs [""]
+ :parsed [:fn "Abs" [:tuple [:free-var "a"]]]
+ :pos [-58 -89]}
+ "3qao1m96qcu9gdi" 
+{:inputs []
+ :label "0 -o- 1"
+ :name "pulse width"
+ :outputs [""]
+ :parsed [:widget "-hf6yec" 0.5 {:type :slider, :limits [[:float "0"] [:float "1"]], :render [:limits], :size 3, :orientation :horizontal, :curve :linear}]
+ :pos [-380 76]}
+ "5wr56q6tlg9qwe2" 
+{:inputs ["a" "b" "more..."]
+ :label "+"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "+" [:free-var "b"] [:free-var "more..."]]
+ :pos [-203 81]}
+ "76py36drf2ot6vd" 
+{:inputs ["a"]
+ :label "* 2"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" [:float "2"]]
+ :pos [-302 197]}
+ "7t13ua9ntmz0hoy" 
+{:cable-midpoints 
+{}
+ :color 2
+ :inputs ["sig"]
+ :label "o))"
+ :name "bipolar sawtooth"
+ :outputs ["thru"]
+ :parsed [:playback [:free-var "sig"]]
+ :pos [148 -272]}
+ "9ew4sb7yx8ipm2p" 
+{:inputs []
+ :label "; double-frequency sawtooth"
+ :outputs []
+ :parsed [:comment "double-frequency sawtooth"]
+ :pos [-206 250]}
+ "b2e1fs6qz8r3zsm" 
+{:color 2
+ :inputs ["a"]
+ :label "- 1"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "-" [:float "1"]]
+ :pos [-8 -192]}
+ "b5de0sq9hsocosc" 
+{:inputs []
+ :label ";# Waveforms via Waveshaping #\n\n\nStandard geometric waves can be\nderived from the phasor."
+ :outputs []
+ :parsed [:comment "# Waveforms via Waveshaping #\n\n\nStandard geometric waves can be\nderived from the phasor."]
+ :pos [-280 -391]}
+ "b92ghhsgs5o0bh0" 
+{:color 4
+ :inputs []
+ :label "; flip every other half-cycle"
+ :outputs []
+ :parsed [:comment "flip every other half-cycle"]
+ :pos [388 128]}
+ "cg6goedgzq0mnj6" 
+{:color 2
+ :inputs ["a"]
+ :label "* 2"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" [:float "2"]]
+ :pos [-131 -192]}
+ "cp61jk7q8cnrzfe" 
+{:inputs ["x"]
+ :label "Fraction($x)"
+ :outputs [""]
+ :parsed [:fn "Fraction" [:tuple [:free-var "x"]]]
+ :pos [-175 197]}
+ "dc9a6h9tpj9nbtq" 
+{:cable-midpoints 
+{}
+ :color 3
+ :inputs ["a" "b" "more..."]
+ :label "*"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" [:free-var "b"] [:free-var "more..."]]
+ :pos [138 230]}
+ "kl4iyvbmsj3ff4n" 
+{:inputs ["a"]
+ :label "- 1"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "-" [:float "1"]]
+ :pos [46 197]}
+ "lkv3ia3hf7tu9cv" 
+{:cable-midpoints 
+{1 [113 230]}
+ :color 4
+ :inputs ["value" "sign"]
+ :label "Math:Copy-Sign($value $sign)"
+ :outputs [""]
+ :parsed [:fn "Math:Copy-Sign" [:tuple [:free-var "value"] [:free-var "sign"]]]
+ :pos [353 230]}
+ "mi075ox8lxw6wi3" 
+{:inputs ["sig"]
+ :label "o))"
+ :name "quadratic pseudo-sine"
+ :outputs ["thru"]
+ :parsed [:playback [:free-var "sig"]]
+ :pos [491 235]}
+ "ohbjsqcnlfe0dpu" 
+{:inputs []
+ :label "20 -x- 2000"
+ :outputs [""]
+ :parsed [:widget "yf3wy6" 0.5758335658482143 {:type :slider, :limits [[:float "20"] [:float "2000"]], :render [:limits], :size 3, :orientation :vertical, :curve :exponential}]
+ :pos [-454 -186]}
+ "p6vc1vlduuhsxhg" 
+{:color 3
+ :inputs ["b"]
+ :label "1 -"
+ :outputs [""]
+ :parsed [:infix [:float "1"] "-" [:free-var "b"]]
+ :pos [223 230]}
+ "pgn5rd3zq3go462" 
+{:color 3
+ :inputs []
+ :label "; inverted paraboloid"
+ :outputs []
+ :parsed [:comment "inverted paraboloid"]
+ :pos [148 288]}
+ "qxqg5te4bsxslr4" 
+{:color 3
+ :inputs ["a"]
+ :label "- 1"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "-" [:float "1"]]
+ :pos [230 -89]}
+ "rajfo2a576e379u" 
+{:color 3
+ :inputs ["a"]
+ :label "* 2"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" [:float "2"]]
+ :pos [107 -89]}
+ "tefck7antn9zucz" 
+{:color 4
+ :inputs ["x"]
+ :label "Fraction($x)"
+ :outputs [""]
+ :parsed [:fn "Fraction" [:tuple [:free-var "x"]]]
+ :pos [-68 81]}
+ "w7so3nxn71p5wrv" 
+{:inputs ["a"]
+ :label "* 2"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" [:float "2"]]
+ :pos [-51 197]}
+ "wvu3mp6ukchgcpi" 
+{:color 3
+ :inputs ["sig"]
+ :label "o))"
+ :name "triangular wave"
+ :outputs ["thru"]
+ :parsed [:playback [:free-var "sig"]]
+ :pos [356 -93]}
+ "zjdojq8bgdg411d" 
+{:color 4
+ :inputs ["sig"]
+ :label "o))"
+ :name "pulse wave"
+ :outputs ["thru"]
+ :parsed [:playback [:free-var "sig"]]
+ :pos [217 30]}}
+ :scale 1
+ :scroll [0 0]}}

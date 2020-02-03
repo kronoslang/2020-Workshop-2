@@ -1,0 +1,100 @@
+{:draft-argument "440"
+ :identifier "MyPhasor"
+ :identity "initial"
+ :patch
+{:cables
+{["1rc5gy9awkl47p1" 0] [:fixed "y5n4ys77u6dqe9y" 0]
+ ["1rc5gy9awkl47p1" 1] [:fixed "u4saolhfo1pvkam" 0]
+ ["2jrtvy5gjczrb8e" 0] [:fixed "odva6u7bk7a86jl" 0]
+ ["2jrtvy5gjczrb8e" 1] [:fixed "ykw2w86rxpdk2jp" 0]
+ ["8qj97mal8edkxib" 0] [:fixed "mui7w3dqhia7ja" 0]
+ ["mui7w3dqhia7ja" 0] [:fixed "2jrtvy5gjczrb8e" 0]
+ ["odva6u7bk7a86jl" 0] [:fixed "1rc5gy9awkl47p1" 0]
+ ["ykw2w86rxpdk2jp" 0] [:fixed "mui7w3dqhia7ja" 0]}
+ :nodes
+{"1rc5gy9awkl47p1" 
+{:inputs ["a" "b" "more..."]
+ :label "/"
+ :name "cps"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "/" [:free-var "b"] [:free-var "more..."]]
+ :pos [-92 -43]}
+ "2jrtvy5gjczrb8e" 
+{:cable-midpoints 
+{1 [25 -83]}
+ :color 3
+ :inputs ["a" "b" "more..."]
+ :label "+"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "+" [:free-var "b"] [:free-var "more..."]]
+ :pos [156 4]}
+ "4x3dis0q6tselzi" 
+{:color 3
+ :inputs []
+ :label "; ## Feedback Loop ##\n\n\nEvery time the signal is pushed through this\nloop, the left-hand side frequency coefficient\nis added to the value. `Fraction` wraps the value\nback to zero once it crosses above 1."
+ :outputs []
+ :parsed [:comment "## Feedback Loop ##\n\n\nEvery time the signal is pushed through this\nloop, the left-hand side frequency coefficient\nis added to the value. `Fraction` wraps the value\nback to zero once it crosses above 1."]
+ :pos [329 -308]}
+ "7btfst1r7y4orcd" 
+{:color 4
+ :inputs []
+ :label ";# Phasor #\n\n\nPeriodic ramp from 0 to 1"
+ :outputs []
+ :parsed [:comment "# Phasor #\n\n\nPeriodic ramp from 0 to 1"]
+ :pos [-219 -314]}
+ "8qj97mal8edkxib" 
+{:color 2
+ :inputs ["output"]
+ :label "$output"
+ :outputs [""]
+ :parsed [:free-var "output"]
+ :pos [409 81]}
+ "jlvpxlz46abrzof" 
+{:color 2
+ :inputs []
+ :label "; add a null output node to indicate the *root* of the function; otherwise\nit is unclear which node repesents the output."
+ :outputs []
+ :parsed [:comment "add a null output node to indicate the *root* of the function; otherwise\nit is unclear which node repesents the output."]
+ :pos [420 147]}
+ "mui7w3dqhia7ja" 
+{:color 3
+ :inputs ["sig~"]
+ :label "z-1($sig~)"
+ :outputs [""]
+ :parsed [:fn "z-1" [:tuple [:free-var "sig~"]]]
+ :pos [246 4]}
+ "odva6u7bk7a86jl" 
+{:inputs ["sig"]
+ :label "Gen:Signal($sig)"
+ :name "upsample to audio"
+ :outputs [""]
+ :parsed [:fn "Gen:Signal" [:tuple [:free-var "sig"]]]
+ :pos [51 4]}
+ "tt4v6hdt0pk8ry5" 
+{:inputs []
+ :label ";## Cycles per Sample ##\n\n\nWe should increment the waveform value by `freq / sample-rate`\nevery sample to reach 1 `freq` times per second.\n\n\nThis is the frequency expressed in *cycles per sample*."
+ :outputs []
+ :parsed [:comment "## Cycles per Sample ##\n\n\nWe should increment the waveform value by `freq / sample-rate`\nevery sample to reach 1 `freq` times per second.\n\n\nThis is the frequency expressed in *cycles per sample*."]
+ :pos [-97 112]}
+ "u4saolhfo1pvkam" 
+{:inputs []
+ :label "Gen:Rate()"
+ :name "generator rate"
+ :outputs [""]
+ :parsed [:fn "Gen:Rate" [:tuple]]
+ :pos [-182 -161]}
+ "y5n4ys77u6dqe9y" 
+{:inputs []
+ :label "freq = arg"
+ :outputs ["freq"]
+ :parsed "arg"
+ :pos [-242 -43]}
+ "ykw2w86rxpdk2jp" 
+{:color 3
+ :inputs ["x"]
+ :label "Fraction($x)"
+ :outputs [""]
+ :parsed [:fn "Fraction" [:tuple [:free-var "x"]]]
+ :pos [398 -13]}}
+ :scale 1
+ :scroll [0 0]}}

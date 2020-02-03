@@ -1,0 +1,42 @@
+{:draft-argument "Gen:Noise(0.499d) MyPhasor(0.1)"
+ :identifier "MyFilter"
+ :identity "7n968y6uj0rd3hs"
+ :patch
+{:cables
+{["1kwq6bpcz8bztkh" 0] [:fixed "4yx14x9jjb8d10l" 0]
+ ["4yx14x9jjb8d10l" 0] [:fixed "5rz7lmxq45d5u1y" 1]
+ ["4yx14x9jjb8d10l" 1] [:fixed "1kwq6bpcz8bztkh" 0]
+ ["4yx14x9jjb8d10l" 2] [:fixed "5rz7lmxq45d5u1y" 0]}
+ :nodes
+{"1kwq6bpcz8bztkh" 
+{:cable-midpoints 
+{0 [-61 -150]}
+ :inputs ["sig~"]
+ :label "z-1($sig~)"
+ :outputs [""]
+ :parsed [:fn "z-1" [:tuple [:free-var "sig~"]]]
+ :pos [-23 0]
+ }
+ "4yx14x9jjb8d10l" 
+{:inputs ["mix" "a" "b"]
+ :label "Math:Mix($mix $a $b)"
+ :outputs [""]
+ :parsed [:fn "Math:Mix" [:tuple [:free-var "mix"] [:free-var "a"] [:free-var "b"]]]
+ :pos [80 125]
+ }
+ "5rz7lmxq45d5u1y" 
+{:inputs []
+ :label "(sig cutoff) = arg"
+ :outputs ["sig" "cutoff"]
+ :parsed "arg"
+ :pos [-192 48]
+ }
+ "txi1cw6o6rbuax3" 
+{:inputs []
+ :label ";# Feedback Filters #\n\n\nThis patch features a feedback lowpass filter."
+ :outputs []
+ :parsed [:comment "# Feedback Filters #\n\n\nThis patch features a feedback lowpass filter."]
+ :pos [-205 -292]
+ :selected true}}
+ :scale 1
+ :scroll [0 0]}}

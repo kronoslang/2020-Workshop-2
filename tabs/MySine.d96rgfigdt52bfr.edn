@@ -1,0 +1,150 @@
+{:draft-argument "440"
+ :identifier "MySine"
+ :identity "d96rgfigdt52bfr"
+ :patch
+{:cables
+{["42mnbr0uo4xdwhw" 0] [:fixed "9uc638b59rkwdge" 0]
+ ["5qpdvlzrw24d25e" 0] [:fixed "xlt1xinoydwl2bg" 0]
+ ["9uc638b59rkwdge" 0] [:fixed "uyjo1lseedl62xa" 0]
+ ["9uc638b59rkwdge" 1] [:fixed "61fdd98p51umady" 0]
+ ["gmz80ygh7if5hvp" 0] [:fixed "42mnbr0uo4xdwhw" 0]
+ ["gmz80ygh7if5hvp" 1] [:fixed "xlt1xinoydwl2bg" 0]
+ ["riizmacx4z28qua" 0] [:fixed "jl4vtjbnkejxcx" 0]
+ ["riizmacx4z28qua" 1] [:fixed "61fdd98p51umady" 0]
+ ["uyjo1lseedl62xa" 0] [:fixed "zq8br01erl31lm" 0]
+ ["uyjo1lseedl62xa" 1] [:fixed "xx1bccv6u1dm526" 0]
+ ["uyjo1lseedl62xa" 2] [:fixed "ho07fnty9corxxp" 0]
+ ["xlt1xinoydwl2bg" 0] [:fixed "riizmacx4z28qua" 0]
+ ["xlt1xinoydwl2bg" 1] [:fixed "gmz80ygh7if5hvp" 0]
+ ["zq8br01erl31lm" 0] [:fixed "us0454h8r7wy672" 0]
+ ["zq8br01erl31lm" 1] [:fixed "ocgahb5tbxj77az" 0]}
+ :nodes
+{"42mnbr0uo4xdwhw" 
+{:inputs ["sig"]
+ :label "Gen:Signal($sig)"
+ :name "upsample to audio"
+ :outputs [""]
+ :parsed [:fn "Gen:Signal" [:tuple [:free-var "sig"]]]
+ :pos [56 32]}
+ "5qpdvlzrw24d25e" 
+{:color 4
+ :inputs ["c"]
+ :label "Complex:Real($c)"
+ :name "output real part"
+ :outputs [""]
+ :parsed [:fn "Complex:Real" [:tuple [:free-var "c"]]]
+ :pos [446 134]}
+ "5yj7vzvyoyc66zc" 
+{:color 3
+ :inputs []
+ :label ";## Rotational Coefficient ##\n\n\nCompute a *polar* complex number\nwith angle `freq * 2 * pi / sample-rate` to\nget a coefficient that will rotate the complex waveform at a speed of `freq` cycles\nper second."
+ :outputs []
+ :parsed [:comment "## Rotational Coefficient ##\n\n\nCompute a *polar* complex number\nwith angle `freq * 2 * pi / sample-rate` to\nget a coefficient that will rotate the complex waveform at a speed of `freq` cycles\nper second."]
+ :pos [-288 106]}
+ "61fdd98p51umady" 
+{:color 3
+ :inputs []
+ :label "1"
+ :outputs [""]
+ :parsed [:float "1"]
+ :pos [-122 -82]}
+ "9qw76w18mttu6r4" 
+{:inputs []
+ :label ";# Sinusoid Synthesis #\n\n\nThis example generates a sinusoid with a recursive *complex multiplication formula*."
+ :outputs []
+ :parsed [:comment "# Sinusoid Synthesis #\n\n\nThis example generates a sinusoid with a recursive *complex multiplication formula*."]
+ :pos [214 -277]}
+ "9uc638b59rkwdge" 
+{:color 3
+ :inputs ["angle" "radius"]
+ :label "Complex:Polar($angle $radius)"
+ :outputs [""]
+ :parsed [:fn "Complex:Polar" [:tuple [:free-var "angle"] [:free-var "radius"]]]
+ :pos [-70 32]}
+ "bhz3ozqm90yn6vj" 
+{:color 4
+ :inputs []
+ :label "; this loop has a complex-valued signal"
+ :outputs []
+ :parsed [:comment "this loop has a complex-valued signal"]
+ :pos [553 38]}
+ "gmz80ygh7if5hvp" 
+{:cable-midpoints 
+{1 [31 -68]}
+ :color 4
+ :inputs ["a" "b" "more..."]
+ :label "*"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" [:free-var "b"] [:free-var "more..."]]
+ :pos [157 32]}
+ "ho07fnty9corxxp" 
+{:color 3
+ :inputs []
+ :label "2"
+ :outputs [""]
+ :parsed [:float "2"]
+ :pos [-281 -130]}
+ "jl4vtjbnkejxcx" 
+{:inputs []
+ :label "0"
+ :outputs [""]
+ :parsed [:float "0"]
+ :pos [9 143]}
+ "ocgahb5tbxj77az" 
+{:color 3
+ :inputs []
+ :label "Gen:Rate()"
+ :outputs [""]
+ :parsed [:fn "Gen:Rate" [:tuple]]
+ :pos [-344 -26]}
+ "riizmacx4z28qua" 
+{:inputs ["angle" "radius"]
+ :label "Complex:Polar($angle $radius)"
+ :outputs [""]
+ :parsed [:fn "Complex:Polar" [:tuple [:free-var "angle"] [:free-var "radius"]]]
+ :pos [104 143]}
+ "us0454h8r7wy672" 
+{:color 3
+ :inputs []
+ :label "freq = arg"
+ :outputs ["freq"]
+ :parsed "arg"
+ :pos [-338 32]}
+ "uyjo1lseedl62xa" 
+{:color 3
+ :ephemeral-inputs #{"more1"}
+ :inputs ["a" "b" "more1" "more..."]
+ :label "*"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" [:free-var "b"] [:free-var "more1"] [:free-var "more..."]]
+ :pos [-171 32]}
+ "vy569r2ocmhb6hd" 
+{:inputs []
+ :label "; initialize loop with angle 0, distance 1"
+ :outputs []
+ :parsed [:comment "initialize loop with angle 0, distance 1"]
+ :pos [162 204]}
+ "xlt1xinoydwl2bg" 
+{:color 4
+ :inputs ["init" "sig~"]
+ :label "z-1($init $sig~)"
+ :name "z-1 with initializer"
+ :outputs [""]
+ :parsed [:fn "z-1" [:tuple [:free-var "init"] [:free-var "sig~"]]]
+ :pos [268 82]}
+ "xx1bccv6u1dm526" 
+{:color 3
+ :inputs []
+ :label "Math:Pi"
+ :outputs [""]
+ :parsed "Math:Pi"
+ :pos [-347 -84]}
+ "zq8br01erl31lm" 
+{:color 3
+ :inputs ["a" "b" "more..."]
+ :label "/"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "/" [:free-var "b"] [:free-var "more..."]]
+ :pos [-252 32]}}
+ :scale 1
+ :scroll [0 0]}}

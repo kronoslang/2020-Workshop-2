@@ -1,0 +1,14 @@
+{:assets 
+{}
+ :current-tab 4
+ :file "ws2.veneer"
+ :manifest 
+{:dependencies 
+{}
+ :description ""
+ :license "https://www.eclipse.org/legal/epl-v10.html"
+ :name "2020-Workshop-2"
+ :url "https://kronoslang.io"
+ :version "0.1"}
+ :name "2020-Workshop-2"
+ :tabs ("tabs/MyPhasor.initial.edn" "tabs/Waveshaping.6vaj5pujecl9czp.edn" "tabs/MySine.d96rgfigdt52bfr.edn" "tabs/FIR-Filter.20epd8gxq5qbj3a.edn" "tabs/MyFilter.7n968y6uj0rd3hs.edn")}
