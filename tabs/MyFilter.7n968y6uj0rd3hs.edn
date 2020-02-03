@@ -16,35 +16,30 @@
  :label "z-1($sig~)"
  :outputs [""]
  :parsed [:fn "z-1" [:tuple [:free-var "sig~"]]]
- :pos [-23 0]
- }
+ :pos [-23 0]}
  "4yx14x9jjb8d10l" 
 {:inputs ["mix" "a" "b"]
  :label "Math:Mix($mix $a $b)"
  :outputs [""]
  :parsed [:fn "Math:Mix" [:tuple [:free-var "mix"] [:free-var "a"] [:free-var "b"]]]
- :pos [80 125]
- }
+ :pos [80 125]}
  "5rz7lmxq45d5u1y" 
 {:inputs []
  :label "(sig cutoff) = arg"
  :outputs ["sig" "cutoff"]
  :parsed "arg"
- :pos [-192 48]
- }
+ :pos [-192 48]}
  "ahpk1l5fv2qgdpo" 
 {:inputs ["sig"]
  :label "o))"
  :outputs ["thru"]
  :parsed [:playback [:free-var "sig"]]
- :pos [219 154]
- }
+ :pos [219 154]}
  "txi1cw6o6rbuax3" 
 {:inputs []
  :label ";# Feedback Filters #\n\n\nThis patch features a feedback lowpass filter.\n\n\nThe output is computed by blending the incoming signal with the signal in the filter loop. The filter is fully open when\nthe blend consists of just the input, and fully closed when it is purely a feedback path."
  :outputs []
  :parsed [:comment "# Feedback Filters #\n\n\nThis patch features a feedback lowpass filter.\n\n\nThe output is computed by blending the incoming signal with the signal in the filter loop. The filter is fully open when\nthe blend consists of just the input, and fully closed when it is purely a feedback path."]
- :pos [297 -233]
- }}
+ :pos [297 -233]}}
  :scale 1
  :scroll [0 0]}}

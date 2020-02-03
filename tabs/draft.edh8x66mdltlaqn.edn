@@ -1,45 +1,107 @@
-{
- :identity "edh8x66mdltlaqn"
+{:identity "edh8x66mdltlaqn"
  :patch
 {:cables
-{["egivo5vtyxesxkn" 0] [:fixed "q63vitxnu2v26i2" 0]
+{["8oxbsg9z0y6o5s1" 0] [:fixed "ju3jp7ka27yo50p" 0]
+ ["8oxbsg9z0y6o5s1" 1] [:fixed "ub8lxxgwwadvzr2" 0]
+ ["a3d3bhqwj9qy1bn" 0] [:fixed "c9jbwq6465cnflz" 0]
+ ["a3d3bhqwj9qy1bn" 1] [:fixed "xl7b4p1xbs7l4jk" 0]
+ ["a3d3bhqwj9qy1bn" 2] [:fixed "xm58iaaivyl6wi" 0]
+ ["egivo5vtyxesxkn" 0] [:fixed "q63vitxnu2v26i2" 0]
  ["egivo5vtyxesxkn" 1] [:fixed "fknu6li2gz0ob1a" 0]
+ ["elb4boeh5i44wni" 0] [:fixed "a3d3bhqwj9qy1bn" 0]
+ ["ju3jp7ka27yo50p" 0] [:fixed "elb4boeh5i44wni" 0]
  ["ol4s4dht5ule2up" 0] [:fixed "mwa8amdtb88c8q9" 0]
  ["om3245tdj107jzk" 0] [:fixed "q63vitxnu2v26i2" 2]
+ ["pae2oqomysi9ef4" 0] [:fixed "elb4boeh5i44wni" 0]
  ["q63vitxnu2v26i2" 0] [:fixed "ol4s4dht5ule2up" 0]
- ["ute7rdw1c8p71bm" 0] [:fixed "om3245tdj107jzk" 0]
- ["ute7rdw1c8p71bm" 1] [:fixed "v9usj9bmij7fd2a" 0]
  ["v9usj9bmij7fd2a" 0] [:fixed "q63vitxnu2v26i2" 1]
- ["v9usj9bmij7fd2a" 1] [:fixed "egivo5vtyxesxkn" 0]}
+ ["v9usj9bmij7fd2a" 1] [:fixed "egivo5vtyxesxkn" 0]
+ ["xl7b4p1xbs7l4jk" 1] [:fixed "v9usj9bmij7fd2a" 0]
+ ["xm58iaaivyl6wi" 0] [:fixed "om3245tdj107jzk" 0]
+ ["xm58iaaivyl6wi" 1] [:fixed "8oxbsg9z0y6o5s1" 0]}
  :nodes
-{"egivo5vtyxesxkn" 
+{"8oxbsg9z0y6o5s1" 
+{:color 3
+ :inputs ["a" "b" "more..."]
+ :label "*"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" [:free-var "b"] [:free-var "more..."]]
+ :pos [477 117]
+ }
+ "a3d3bhqwj9qy1bn" 
+{:color 2
+ 
+ :inputs ["n" "func" "x"]
+ :label "Algorithm:Iterate($n $func $x)"
+ :name "repeat filter 4 times"
+ :outputs [""]
+ :parsed [:fn "Algorithm:Iterate" [:tuple [:free-var "n"] [:free-var "func"] [:free-var "x"]]]
+ :pos [183 117]
+ }
+ "bdtfrida6ct5iav" 
+{:color 3
+ :inputs []
+ :label "; The resonance is just a feedback loop across the entire filter ladder."
+ :outputs []
+ :parsed [:comment "The resonance is just a feedback loop across the entire filter ladder."]
+ :pos [376 -76]
+ }
+ "c9jbwq6465cnflz" 
+{:color 2
+ :inputs []
+ :label "#4"
+ :outputs [""]
+ :parsed [:invariant "4"]
+ :pos [25 173]
+ }
+ "egivo5vtyxesxkn" 
 {:inputs ["sig" "cutoff"]
  :label "MyFilter($sig $cutoff)"
  :name "envelope"
  :outputs [""]
  :parsed [:fn "MyFilter" [:tuple [:free-var "sig"] [:free-var "cutoff"]]]
- :pos [212 -106]
+ :pos [-98 -199]
+ }
+ "elb4boeh5i44wni" 
+{:color 2
+ :inputs ["w"]
+ :label "Approx:Tanh($w)"
+ :outputs [""]
+ :parsed [:fn "Approx:Tanh" [:tuple [:free-var "w"]]]
+ :pos [310 117]
  }
  "fknu6li2gz0ob1a" 
 {:inputs []
- :label "0.01"
+ :label "0.0001"
+ :name "envelope speed"
  :outputs [""]
- :parsed [:float "0.01"]
- :pos [75 -160]
+ :parsed [:float "0.0001"]
+ :pos [-244 -285]
+ }
+ "ju3jp7ka27yo50p" 
+{:color 3
+ :inputs ["sig~"]
+ :label "z-1($sig~)"
+ :outputs [""]
+ :parsed [:fn "z-1" [:tuple [:free-var "sig~"]]]
+ :pos [405 117]
  }
  "mwa8amdtb88c8q9" 
 {:inputs []
  :label "(0 20) `xy` (1 200)"
+ :name "click & drag here!"
  :outputs [""]
  :parsed [:widget "539kws" {:mouse [0 0.544137106362413 0.6567302925385521 1]} {:type :xy-pad, :kind :touch, :size :normal, :left-bottom [:tuple [:float "0"] [:float "20"]], :right-top [:tuple [:float "1"] [:float "200"]]}]
- :pos [-311 -133]
+ :pos [-339 -35]
  }
  "ol4s4dht5ule2up" 
-{:inputs ["sig"]
+{:cable-midpoints 
+{}
+ :inputs ["sig"]
  :label "Gen:Signal($sig)"
  :outputs [""]
  :parsed [:fn "Gen:Signal" [:tuple [:free-var "sig"]]]
- :pos [-58 11]
+ :pos [-379 -121]
  }
  "om3245tdj107jzk" 
 {:inputs ["freq"]
@@ -47,29 +109,71 @@
  :name "oscillator"
  :outputs [""]
  :parsed [:fn "MyPhasor" [:tuple [:free-var "freq"]]]
- :pos [235 110]
+ :pos [-64 -55]
+ }
+ "p4q71wjhcagv0zh" 
+{:inputs []
+ :label ";# Synth Playground #\n\nYou can build a pretty nice synthesizer from such basic pieces. Here we use `MyFilter` for both the envelope and filtering."
+ :outputs []
+ :parsed [:comment "# Synth Playground #\n\nYou can build a pretty nice synthesizer from such basic pieces. Here we use `MyFilter` for both the envelope and filtering."]
+ :pos [246 -317]
+ }
+ "pae2oqomysi9ef4" 
+{:inputs ["sig"]
+ :label "o))"
+ :name "play here!"
+ :outputs ["thru"]
+ :parsed [:playback [:free-var "sig"]]
+ :pos [403 195]
  }
  "q63vitxnu2v26i2" 
 {:inputs ["pair"]
  :label "(gate cutoff pitch) = First($pair)"
  :outputs ["gate" "cutoff" "pitch"]
  :parsed [:fn "First" [:tuple [:free-var "pair"]]]
- :pos [68 -10]
+ :pos [-253 -142]
  }
- "ute7rdw1c8p71bm" 
-{:inputs ["sig" "cutoff"]
- :label "MyFilter($sig $cutoff)"
- :name "filter"
+ "ub8lxxgwwadvzr2" 
+{:color 3
+ :inputs []
+ :label "0 -o- 4"
+ :name "resonance"
  :outputs [""]
- :parsed [:fn "MyFilter" [:tuple [:free-var "sig"] [:free-var "cutoff"]]]
- :pos [442 40]
+ :parsed [:widget "-qt26lb" 0.5 {:type :slider, :limits [[:float "0"] [:float "4"]], :render [:limits], :size 3, :orientation :horizontal, :curve :linear}]
+ :pos [337 33]
  }
  "v9usj9bmij7fd2a" 
 {:inputs ["a" "b" "more..."]
  :label "*"
  :outputs [""]
  :parsed [:infix [:free-var "a"] "*" [:free-var "b"] [:free-var "more..."]]
- :pos [347 -39]
+ :pos [-6 -121]
+ }
+ "xl7b4p1xbs7l4jk" 
+{:color 2
+ :inputs ["sig" "cutoff"]
+ :label "MyFilter($sig $cutoff)"
+ :outputs [""]
+ :parsed [:fn "MyFilter" [:tuple [:free-var "sig"] [:free-var "cutoff"]]]
+ :pos [49 60]
+ }
+ "xm58iaaivyl6wi" 
+{:cable-midpoints 
+{1 [32 -136]}
+ :color 3
+ :inputs ["a" "b" "more..."]
+ :label "-"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "-" [:free-var "b"] [:free-var "more..."]]
+ :pos [91 -53]
+ }
+ "zbg93pdvlslxt0s" 
+{:color 2
+ :inputs []
+ :label "; `Iterate` stacks a number of similar functions in series. Here we copy `MyFilter` 4 times."
+ :outputs []
+ :parsed [:comment "`Iterate` stacks a number of similar functions in series. Here we copy `MyFilter` 4 times."]
+ :pos [101 235]
  }}
  :scale 1
  :scroll [0 0]}}
