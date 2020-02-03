@@ -6,7 +6,8 @@
 {["1kwq6bpcz8bztkh" 0] [:fixed "4yx14x9jjb8d10l" 0]
  ["4yx14x9jjb8d10l" 0] [:fixed "5rz7lmxq45d5u1y" 1]
  ["4yx14x9jjb8d10l" 1] [:fixed "1kwq6bpcz8bztkh" 0]
- ["4yx14x9jjb8d10l" 2] [:fixed "5rz7lmxq45d5u1y" 0]}
+ ["4yx14x9jjb8d10l" 2] [:fixed "5rz7lmxq45d5u1y" 0]
+ ["ahpk1l5fv2qgdpo" 0] [:fixed "4yx14x9jjb8d10l" 0]}
  :nodes
 {"1kwq6bpcz8bztkh" 
 {:cable-midpoints 
@@ -31,12 +32,19 @@
  :parsed "arg"
  :pos [-192 48]
  }
+ "ahpk1l5fv2qgdpo" 
+{:inputs ["sig"]
+ :label "o))"
+ :outputs ["thru"]
+ :parsed [:playback [:free-var "sig"]]
+ :pos [219 154]
+ }
  "txi1cw6o6rbuax3" 
 {:inputs []
- :label ";# Feedback Filters #\n\n\nThis patch features a feedback lowpass filter."
+ :label ";# Feedback Filters #\n\n\nThis patch features a feedback lowpass filter.\n\n\nThe output is computed by blending the incoming signal with the signal in the filter loop. The filter is fully open when\nthe blend consists of just the input, and fully closed when it is purely a feedback path."
  :outputs []
- :parsed [:comment "# Feedback Filters #\n\n\nThis patch features a feedback lowpass filter."]
- :pos [-205 -292]
- :selected true}}
+ :parsed [:comment "# Feedback Filters #\n\n\nThis patch features a feedback lowpass filter.\n\n\nThe output is computed by blending the incoming signal with the signal in the filter loop. The filter is fully open when\nthe blend consists of just the input, and fully closed when it is purely a feedback path."]
+ :pos [297 -233]
+ }}
  :scale 1
  :scroll [0 0]}}
